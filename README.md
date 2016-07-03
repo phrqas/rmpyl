@@ -26,7 +26,7 @@ RMPyL addresses this issue by extending Python, a widely used general-purpose pr
 
 RMPyL is a lightweight module for Python 2 and 3 with no dependencies beyond the standard libraries. It is officially hosted at
 
-  git@git.mers.csail.mit.edu:enterprise/RMPyL.git
+  https://github.com/phrqas/rmpyl
 
 In order to install it in your default path for Python packages, just issue
 
