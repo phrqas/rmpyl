@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   width="236.99286"
+   height="75.649117"
+   sodipodi:docname="simple_episode.svg">
+  <metadata
+     id="metadata79">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs77">
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect4313"
+       is_visible="true"
+       pattern="M 0,5 C 0,2.24 2.24,0 5,0 7.76,0 10,2.24 10,5 10,7.76 7.76,10 5,10 2.24,10 0,7.76 0,5 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3809"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect3028"
+       is_visible="true"
+       pattern="M 0,5 C 0,2.24 2.24,0 5,0 7.76,0 10,2.24 10,5 10,7.76 7.76,10 5,10 2.24,10 0,7.76 0,5 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-7"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3809-9"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     id="namedview75"
+     showgrid="false"
+     fit-margin-top="0.1"
+     fit-margin-left="0.1"
+     fit-margin-right="0.1"
+     fit-margin-bottom="0.1"
+     units="cm"
+     inkscape:zoom="1.2685914"
+     inkscape:cx="69.909756"
+     inkscape:cy="18.687124"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <rect
+     class="overlay"
+     width="744.09448"
+     height="1052.3622"
+     style="fill:none"
+     id="rect4"
+     x="-263.7067"
+     y="-158.95663" />
+  <g
+     transform="translate(-243.70669,-138.95669)"
+     id="g6">
+    <defs
+       id="defs8">
+      <g
+         id="event">
+        <circle
+           class="event-node"
+           cx="0"
+           cy="0"
+           r="20"
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.5px"
+           id="circle11"
+           d="m 20,0 c 0,11.045695 -8.954305,20 -20,20 -11.045695,0 -20,-8.954305 -20,-20 0,-11.045695 8.954305,-20 20,-20 11.045695,0 20,8.954305 20,20 z"
+           sodipodi:cx="0"
+           sodipodi:cy="0"
+           sodipodi:rx="20"
+           sodipodi:ry="20" />
+      </g>
+    </defs>
+    <g
+       class="zoom"
+       transform="translate(248,143)"
+       id="g13">
+      <g
+         class="edgePaths"
+         id="g15">
+        <defs
+           id="defs17">
+          <marker
+             id="arrowhead-rgb_51__51__51_"
+             viewBox="0 0 10 10"
+             refX="8"
+             refY="5"
+             markerUnits="strokeWidth"
+             markerWidth="8"
+             markerHeight="5"
+             orient="auto"
+             style="fill:#333333">
+            <path
+               d="M 0,0 10,5 0,10 z"
+               id="path20"
+               inkscape:connector-curvature="0" />
+          </marker>
+          <marker
+             id="arrowhead"
+             viewBox="0 0 10 10"
+             refX="8"
+             refY="5"
+             markerUnits="strokeWidth"
+             markerWidth="8"
+             markerHeight="5"
+             orient="auto"
+             style="fill:#333333">
+            <path
+               d="M 0,0 10,5 0,10 z"
+               id="path23"
+               inkscape:connector-curvature="0" />
+          </marker>
+        </defs>
+        <g
+           class="edgePath enter"
+           id="g25">
+          <path
+             style="fill:none;stroke:#333333;stroke-width:1.5px;marker-end:url(#arrowhead-rgb_51__51__51_)"
+             d="m 40,34 12.367187,0 c 12.367188,0 37.101563,0 61.835943,0 24.73437,0 49.46874,0 61.83593,0 l 12.36719,0"
+             id="path27"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+      <g
+         class="edgeLabels"
+         id="g29">
+        <g
+           class="edgeLabel enter"
+           transform="translate(114.20313,34)"
+           original-title="&lt;strong&gt;&lt;h4 class=&quot;tooltip-title&quot;&gt;          Episode          &lt;/h4&gt;&lt;/strong&gt;&lt;br/&gt;&lt;strong&gt;ID:&lt;/strong&gt; Episode_0x7f01d606f8d0&lt;br/&gt;&lt;strong&gt;Name:&lt;/strong&gt; _Episode_0x7f01d606f8d0&lt;br/&gt;&lt;strong&gt;From:&lt;/strong&gt; Event_0x7f01d606f790&lt;br/&gt;&lt;strong&gt;To:&lt;/strong&gt; Event_0x7f01d606f850&lt;br/&gt;&lt;strong&gt;Duration:&lt;/strong&gt; [1, 10]&lt;/br/&gt;&lt;strong&gt;Dispatch:&lt;/strong&gt; (uav-scan)&lt;br/&gt;&lt;strong&gt;Guard:&lt;/strong&gt;: true&lt;br/&gt;&lt;strong&gt;State Constraint:&lt;/strong&gt; ((Healthy=(True)))&lt;br/&gt;&lt;strong&gt;Macro TPN ID:&lt;/strong&gt; "
+           id="g31">
+          <rect
+             rx="5"
+             ry="5"
+             x="-59.203125"
+             y="-34"
+             width="118.40625"
+             height="68"
+             id="rect33"
+             style="fill:#ffffff" />
+          <g
+             transform="translate(-59.203125,-34)"
+             id="g35">
+            <g
+               id="g37">
+              <g
+                 transform="translate(23.132812,0)"
+                 id="g39">
+                <rect
+                   class="dispatch-box"
+                   width="72.140625"
+                   height="22"
+                   rx="5"
+                   ry="5"
+                   style="fill:#ffc0c0;stroke:#9a4545;stroke-width:1px"
+                   id="rect41"
+                   x="0"
+                   y="0" />
+                <text
+                   text-anchor="left"
+                   style="font-family:sans-serif"
+                   y="16"
+                   id="text43">
+                  <tspan
+                     x="3"
+                     style="fill:#9a4545"
+                     id="tspan45">(uav-scan)</tspan>
+                </text>
+              </g>
+              <g
+                 transform="translate(0,23)"
+                 id="g47">
+                <rect
+                   class="state-constraint-box"
+                   width="118.40625"
+                   height="22"
+                   rx="5"
+                   ry="5"
+                   style="fill:#beffb0;stroke:#306d1d;stroke-width:1px"
+                   id="rect49"
+                   x="0"
+                   y="0" />
+                <text
+                   text-anchor="left"
+                   style="font-family:sans-serif"
+                   y="16"
+                   id="text51">
+                  <tspan
+                     x="3"
+                     style="fill:#306d1d"
+                     id="tspan53">((Healthy=(True)))</tspan>
+                </text>
+              </g>
+              <g
+                 transform="translate(36.742187,46)"
+                 id="g55">
+                <rect
+                   class="duration-box"
+                   width="44.921875"
+                   height="22"
+                   rx="5"
+                   ry="5"
+                   style="fill:#ffffff;stroke:#ffffff;stroke-width:0px"
+                   id="rect57"
+                   x="0"
+                   y="0" />
+                <text
+                   text-anchor="left"
+                   style="font-family:sans-serif"
+                   y="16"
+                   id="text59">
+                  <tspan
+                     x="3"
+                     style="fill:#000000"
+                     id="tspan61">[1, 10]</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         class="nodes"
+         id="g63">
+        <g
+           class="node enter"
+           transform="translate(20,34)"
+           original-title="&lt;strong&gt;&lt;h4 class=&quot;tooltip-title&quot;&gt;Event&lt;/h4&gt;&lt;/strong&gt;&lt;strong&gt;ID:&lt;/strong&gt; Event_0x7f01d606f790&lt;br/&gt;&lt;strong&gt;Name:&lt;/strong&gt; uav-start-scan&lt;br/&gt;&lt;strong&gt;Guard:&lt;/strong&gt; true"
+           id="g65">
+          <use
+             xlink:href="#event"
+             id="use67"
+             x="0"
+             y="0"
+             width="744.09448"
+             height="1052.3622" />
+        </g>
+        <g
+           class="node enter"
+           title="&lt;strong&gt;&lt;h4 class=&quot;tooltip-title&quot;&gt;Event&lt;/h4&gt;&lt;/strong&gt;&lt;strong&gt;ID:&lt;/strong&gt; Event_0x7f01d606f850&lt;br/&gt;&lt;strong&gt;Name:&lt;/strong&gt; uav-end-scan&lt;br/&gt;&lt;strong&gt;Guard:&lt;/strong&gt; true"
+           transform="translate(208.40625,34)"
+           id="g69">
+          <use
+             xlink:href="#event"
+             id="use71"
+             x="0"
+             y="0"
+             width="744.09448"
+             height="1052.3622" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g73"
+     transform="translate(-263.70669,-158.95669)" />
+  <text
+     xml:space="preserve"
+     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="-78.827583"
+     y="76.437393"
+     id="text3018"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3020"
+       x="-78.827583"
+       y="76.437393">Start event</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="234.90622"
+     y="76.595596"
+     id="text3022"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3024"
+       x="234.90622"
+       y="76.595596">End event</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="-2.8082383"
+     y="-23.427605"
+     id="text3018-4"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3020-8"
+       x="-2.8082383"
+       y="-23.427605">Activity</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="140.74461"
+     y="-15.55472"
+     id="text3018-4-3"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3020-8-0"
+       x="140.74461"
+       y="-15.55472">State constraint</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="81.623932"
+     y="113.72253"
+     id="text3018-4-9"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3020-8-5"
+       x="81.623932"
+       y="113.72253">Duration</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+     d="M -29.954484,59.095323 C -46.508277,38.600151 0.78827588,40.964978 0.78827588,40.964978"
+     id="path4315"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+     d="m 267.74513,59.095321 c 16.55379,-20.49517 -30.74276,-18.13034 -30.74276,-18.13034"
+     id="path4315-6"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-7)"
+     d="M 81.192416,8.6456671 C 55.179312,3.1277361 37.048968,-18.155713 37.048968,-18.155713"
+     id="path4523"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-7)"
+     d="m 164.74967,25.987737 c 25.22482,-21.2834496 36.26068,-37.048966 36.26068,-37.048966"
+     id="path4709"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-7)"
+     d="m 119.02966,70.919461 -1e-5,27.589656"
+     id="path4895"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+</svg>

@@ -1,0 +1,83 @@
+class Roadmap {
+	initial value depot;
+	value custA;
+	value custB;
+	value custC;
+	value custD;
+	
+	primitive method go_depot_A() [5, inf] depot => custA;
+	primitive method go_depot_B() [5, inf] depot => custB;
+	primitive method go_depot_C() [5, inf] depot => custC;
+	primitive method go_depot_D() [5, inf] depot => custD;
+	
+	primitive method go_A_depot() [5, inf] custA => depot;
+	primitive method go_A_B() [5, inf] custA => custB;
+	primitive method go_A_C() [5, inf] custA => custC;
+	primitive method go_A_D() [5, inf] custA => custD;
+	
+	primitive method go_B_depot() [5, inf] custB => depot;
+	primitive method go_B_A() [5, inf] custB => custA;
+	primitive method go_B_C() [5, inf] custB => custC;
+	primitive method go_B_D() [5, inf] custB => custD;
+	
+	primitive method go_C_depot() [5, inf] custC => depot;
+	primitive method go_C_A() [5, inf] custC => custA;
+	primitive method go_C_B() [5, inf] custC => custB;	
+	primitive method go_C_D() [5, inf] custC => custD;
+	
+	primitive method go_D_depot() [5, inf] custD => depot;
+	primitive method go_D_A() [5, inf] custD => custA;
+	primitive method go_D_B() [5, inf] custD => custB;
+	primitive method go_D_C() [5, inf] custD => custC;
+}
+
+class CustomerInfo {
+	initial value not_serviced;
+	value serviced;	
+}
+
+class CustomerServiced {
+	CustomerInfo A;
+	CustomerInfo B;
+	CustomerInfo C;
+	CustomerInfo D;
+}
+
+class Vehicle {
+	Roadmap location;
+	
+	CustomerServiced customer;	
+	primitive method service_A() [1, 2] location == A && customer.A == not_serviced => customer.A == serviced;
+	primitive method service_B() [1, 2] location == B && customer.B == not_serviced => customer.B == serviced;
+	primitive method service_C() [1, 2] location == C && customer.C == not_serviced => customer.C == serviced;
+	primitive method service_D() [1, 2] location == D && customer.D == not_serviced => customer.D == serviced;
+	
+	Vehicle(CustomerServiced cs) {
+		customer = cs;
+	}
+}
+
+class main {
+	CustomerServiced customer;
+	Vehicle v1;
+	Vehicle v2;
+	
+	main() {
+		v1 = new Vehicle(customer);
+		v2 = new Vehicle(customer);
+	}
+	
+	method run() {
+		constrained sequence {
+			s : parallel {
+				sequence {(customer.A == not_serviced); as : (customer.A == serviced);}
+				sequence {(customer.B == not_serviced); bs : (customer.B == serviced);}
+				sequence {(customer.C == not_serviced); cs : (customer.C == serviced);}
+				sequence {(customer.D == not_serviced); ds : (customer.D == serviced);}
+			}
+		} (startof(as) - startof(s) in [3, 5],
+		   startof(bs) - startof(s) in [6, 9],
+		   startof(cs) - startof(s) in [11, 13],
+		   startof(ds) - startof(s) in [8, 9]);
+	}
+}

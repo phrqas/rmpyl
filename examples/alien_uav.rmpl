@@ -1,0 +1,156 @@
+class Picture {
+    initial value empty;
+    value full;
+}
+
+class Location {
+	initial value police_station;
+	value battleship;
+	value weapons;
+	value mothership;
+	
+	primitive method to_police_station() [3,6] => police_station;
+	primitive method to_weapons() [4,8] => weapons;
+	primitive method to_battleship() [4,8] => battleship; 
+	primitive method to_mothership() [4,8]  => mothership;
+}
+
+class Alien_Patroller {
+    
+    Location alien_location;
+    primitive method wait_short() [5,10];
+    primitive method wait_long() [10,20];
+    
+    method patrol() {
+        sequence {
+            wait_long();
+            choose {
+                with choice: alien_location.to_battleship();
+                with choice: alien_location.to_weapons();
+            }
+            wait_long();
+            choose_probabilistic {
+  			    with probability: 0.6 alien_location.to_mothership();
+  			    with probability: 0.2 alien_location.to_battleship();
+  			    with probability: 0.2 alien_location.to_weapons();
+  		    }
+  		    
+  		    sequence{
+  		        wait_long();
+  		        alien_location.to_mothership();
+  		        wait_short();
+  		        alien_location.to_weapons();
+  		        wait_short();
+  		        alien_location.to_battleship();
+  		        wait_short();
+  		        alien_location.to_mothership();
+  		    }
+        }
+    }
+    
+}
+
+
+
+class UAV {
+    initial value landed;
+    value fly;
+
+    //Take-off and Landing
+    primitive method launch() [1,2] landed => fly;
+    primitive method land() [1,2] fly  => landed;
+    
+    //Navigation
+    Location uav_location;
+
+    
+    //UAV pictures
+    Picture uav_pic;
+    primitive method take_pic_mothership() [3,4] uav_location == mothership && uav_pic == empty => uav_pic == full;
+    primitive method take_pic_battleship() [3,4] uav_location == battleship && uav_pic == empty => uav_pic == full;
+    primitive method take_pic_weapons() [3,4] uav_location == weapons && uav_pic == empty => uav_pic == full;
+    primitive method drop_off() [3,5] uav_pic == full && uav_location == police_station => uav_pic == empty;
+    
+    //Deliver Pictures to police station
+    method deliver(){
+        [10,20] sequence{
+            uav_location.to_police_station();
+            land();
+            drop_off();
+            launch();
+        }
+    }
+}
+
+class Main {
+    UAV fbi_spy;
+    Alien_Patroller alien1;
+    Alien_Patroller alien2;
+    
+    method run() {
+        
+        sequence {
+        
+            fbi_spy.launch();
+        
+            parallel {
+                //alien
+                constrained parallel {
+                    a1 : sequence {
+                      alien1.patrol();  
+                      alien1.patrol();
+                    }//alien 1 patrols twice
+        
+                    a2 : alien2.patrol();
+                
+                } (endof(a1) > startof(a2), endof(a1) - endof(a2) in [20,40]);   //constrain the time of alien patrolling
+                //UAV
+                [0,100] parallel {
+                    //three locations each with a different seequenc of events
+                    sequence{
+                        fbi_spy.uav_location.to_mothership();
+                        fbi_spy.take_pic_mothership();
+                        fbi_spy.deliver();
+                    }//mothership
+                    sequence{
+                        fbi_spy.uav_location.to_weapons();
+                        fbi_spy.take_pic_weapons();
+                        fbi_spy.deliver();
+                    }//weapons
+                    sequence{
+                        fbi_spy.uav_location.to_battleship();
+                        fbi_spy.take_pic_battleship();
+                        fbi_spy.deliver();
+                    }//battleship
+                }
+                
+                (!((fbi_spy.uav_location == police_station) && (alien1.alien_location == police_station)));
+                (!((fbi_spy.uav_location == police_station) && (alien2.alien_location == police_station)));
+                (!((fbi_spy.uav_location == weapons) && (alien1.alien_location == weapons)));
+                (!((fbi_spy.uav_location == weapons) && (alien2.alien_location == weapons)));
+                (!((fbi_spy.uav_location == battleship) && (alien1.alien_location == battleship)));
+                (!((fbi_spy.uav_location == battleship) && (alien2.alien_location == battleship)));
+                (!((fbi_spy.uav_location == mothership) && (alien1.alien_location == mothership)));
+                (!((fbi_spy.uav_location == mothership) && (alien2.alien_location == mothership)));
+                
+            
+            }   //constrain the aliens and UAV locations
+        
+            fbi_spy.uav_location.to_police_station();
+            fbi_spy.land();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

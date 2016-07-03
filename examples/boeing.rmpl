@@ -1,0 +1,284 @@
+
+class ObjectName {
+	value redcomp;
+	value greencomp;
+	value yellowcomp;
+	value bluecomp;
+	value solderobj;
+	value cleanerobj;
+	initial value none;
+}
+
+class ObjectType {
+	initial value componenttype;
+	value cleanertype;
+	value soldertype;
+}
+
+
+class Object {
+	initial value not-soldered;
+	value soldered;
+
+	ObjectName name;
+	ObjectType type;
+	
+	LocationName current_location;
+	ManipulatorName currently_held_by;
+	
+}
+
+// Locations
+class LocationName {
+	value redt;
+	value bluet;
+	value greent;
+	value yellowt;
+	value cleanb;
+	value solderb;
+	value redb;       
+	value blueb;
+	value yellowb;
+	value greenb;
+	initial value none;
+}
+
+class Location {
+	initial value not-clean;
+	value clean;
+	
+	LocationName name;
+	
+	ObjectName occupying_object;
+}
+
+
+// Manipulators
+class AgentType {
+	initial value robot_agent;
+	value human_agent;
+}
+
+class Agent {
+	initial value not-moving;
+	value moving;
+	
+	AgentType type;
+}
+
+
+class ManipulatorName {
+	value baxter_left;
+	value baxter_right;
+	value human_hand;
+	initial value none;
+}
+
+class Manipulator {
+	initial value available;
+	value not-available;
+	
+	Agent agent;
+	ManipulatorName name;
+	
+	ObjectName currently_holding;
+	
+	Manipulator(Agent a) {
+		agent = a;
+	}
+	
+	primitive method pick(Object obj, ObjectName oname, Location loc, LocationName lname) [20,100] 
+	(condition at start obj.name == oname
+	 condition at start loc.name == lname
+ 
+	 condition at start available
+	 effect at start this = not-available
+	 effect at end this = available
+	 
+	 condition at start agent == not-moving
+	 effect at start agent = moving
+	 effect at end agent = not-moving	
+	 
+	 condition at start obj == not-soldered
+	 
+	 condition at start currently_holding == none
+	 effect at end currently_holding = oname
+	 
+	 condition at start obj.current_location == lname	 
+	 effect at end obj.current_location = none
+	 
+	 condition at start obj.currently_held_by == none
+	 effect at end obj.currently_held_by = name
+	 
+	 condition at start loc.occupying_object == oname
+	 effect at end loc.occupying_object = none
+	);
+	
+	primitive method place(Object obj, ObjectName oname, Location loc, LocationName lname) [20,100]
+	(condition at start obj.name == oname
+	 condition at start loc.name == lname
+ 
+	 condition at start available
+	 effect at start this = not-available
+	 effect at end this = available
+	 
+	 condition at start agent == not-moving
+	 effect at start agent = moving
+	 effect at end agent = not-moving
+	 
+	 condition at start currently_holding == oname
+	 effect at end currently_holding = none
+	 
+	 condition at start obj.current_location == none	 
+	 effect at end obj.current_location = lname
+	 
+	 condition at start obj.currently_held_by == name
+	 effect at end obj.currently_held_by = none
+	 
+	 condition at start loc.occupying_object == none
+	 effect at end loc.occupying_object = oname
+	); 
+	
+	primitive method clean(Object obj, ObjectName oname, Location loc, LocationName lname) [10,100]
+	(condition at start obj.name == oname
+	 condition at start loc.name == lname
+ 
+	 condition at start available
+	 effect at start this = not-available
+	 effect at end this = available
+	 
+	 condition at start agent == not-moving
+	 effect at start agent = moving
+	 effect at end agent = not-moving
+	 
+	 condition at start obj.type == cleanertype	 
+	 
+	 condition at start currently_holding == oname
+	 
+	 condition at start obj.currently_held_by == name
+	 
+	 condition at start loc.occupying_object == none
+	 effect at start loc.occupying_object = oname
+	 effect at end loc.occupying_object = none
+	 
+	 effect at end loc = clean	 
+	);
+	
+	primitive method solder(Object obj, ObjectName oname, 
+							Object objtosolder, ObjectName objtosoldername,
+							Location loc, LocationName lname) [15,100]
+	(condition at start obj.name == oname
+	 condition at start loc.name == lname
+	 condition at start objtosolder.name == objtosoldername
+ 
+	 condition at start available
+	 effect at start this = not-available
+	 effect at end this = available
+	 
+	 condition at start agent == not-moving
+	 effect at start agent = moving
+	 effect at end agent = not-moving
+	 
+	 condition at start agent.type == human_agent
+	 
+	 condition at start obj.type == soldertype
+	 condition at start objtosolder.type == componenttype
+	 
+	 condition at start currently_holding == oname
+	 
+	 condition at start obj.currently_held_by == name
+	 
+	 condition at start objtosolder.current_location == lname
+	 condition at start objtosolder.currently_held_by == none
+	 
+	 
+	 condition at end objtosolder == not-soldered
+	 effect at end objtosolder = soldered	 
+	);
+	
+}
+
+
+
+// Main
+
+class Main {
+	Manipulator left;
+	Manipulator right;
+	Manipulator hand;
+	
+	Agent baxter;
+	Agent human;
+	
+	Object RedComponent;
+	Object BlueComponent; 
+	Object GreenComponent;
+	Object YellowComponent;
+	Object Cleaner;
+	Object Solder;
+	
+	Location RedTarget;
+	Location BlueTarget;
+	Location GreenTarget;
+	Location YellowTarget;
+	Location CleanBin;
+	Location SolderBin;
+	Location RedBin;          
+	Location BlueBin;
+	Location YellowBin;
+	Location GreenBin;
+	
+	Main() {
+		left = new Manipulator(baxter);
+		right = new Manipulator(baxter);
+		hand = new Manipulator(human);
+		
+		left.name = baxter_left;
+		right.name = baxter_right;
+		hand.name = human_hand;
+		
+		human.type = human_agent;
+		
+		RedComponent.name = redcomp;
+		BlueComponent.name = bluecomp; 
+		GreenComponent.name = greencomp;
+		YellowComponent.name = yellowcomp;
+		Cleaner.name = cleanobj;
+		Solder.name = solderobj;
+		Cleaner.type = cleanertype;
+		Solder.type = soldertype;
+		
+		RedTarget.name = redt;
+		BlueTarget.name = bluet;
+		GreenTarget.name = greent;
+	 	YellowTarget.name = yellowt;
+		CleanBin.name = cleanb;
+		SolderBin.name = solderb;
+		RedBin.name = redb;          
+		BlueBin.name = blueb;
+		YellowBin.name = yellowb;
+		GreenBin.name = greenb;
+		
+		RedComponent.current_location = redb;
+		BlueComponent.current_location = blueb;
+		GreenComponent.current_location = greenb;
+		YellowComponent.current_location = yellowb;
+		Cleaner.current_location = cleanb;
+		Solder.current_location = solderb;
+		
+		RedBin.occupying_object = redcomp;
+		BlueBin.occupying_object = bluecomp;
+		YellowBin.occupying_object = yellowcomp;
+		GreenBin.occupying_object = greencomp;
+		CleanBin.occupying_object = cleanobj;
+		SolderBin.occupying_object = solderobj;
+	}
+	
+	
+	method run()  {
+		((RedComponent.current_location == redt) && (RedComponent == soldered) &&
+		 (BlueComponent.current_location == bluet) && (BlueComponent == soldered) &&
+		 (GreenComponent.current_location == greent) && (GreenComponent == soldered) &&
+		 (YellowComponent.current_location == yellowt) && (YellowComponent == soldered));
+	}
+}

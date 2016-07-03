@@ -1,0 +1,103 @@
+class Boolean {
+	initial value no;
+	value yes;	
+	
+	primitive method setNo() => no;  
+	primitive method setYes() => yes;
+}
+
+class Roadmap {
+	initial value depot0;
+	value depot1;
+	
+	value customer0;
+	value customer1;
+}
+
+class Customer {
+	Roadmap location;
+	Boolean wants_sugar;
+	Boolean wants_cream;
+}
+
+class Depot {
+	Roadmap location;
+	Boolean supplies_sugar;
+	Boolean supplies_cream;
+}
+
+class Drone {
+	Roadmap location;
+	Boolean has_sugar;
+	Boolean has_cream;
+	
+	primitive method fly_depot0() => location == depot0;
+	primitive method fly_depot1() => location == depot1;
+	primitive method fly_customer0() => location == customer0;
+	primitive method fly_customer1() => location == customer1;
+	
+	primitive method pickup_sugar(Depot depot) 
+		(depot.location == location) && (depot.supplies_sugar == yes) => 
+			(has_sugar == yes);
+			
+	primitive method pickup_cream(Depot depot) 
+		(depot.location == location) && (depot.supplies_cream == yes) => 
+			(has_cream == yes);
+			
+	primitive method deliver_sugar(Customer customer) 
+		(customer.location == location) && (has_sugar == yes) => 
+			(customer.wants_sugar == no) && (has_sugar == no);	
+						
+	primitive method deliver_cream(Customer customer) 
+		(customer.location == location) && (has_cream == yes) => 
+			(customer.wants_cream == no) && (has_cream == no);		
+			
+	method blah(Roadmap r) {
+	 {
+	 	fly_depot1();
+	 	(r == depot0);
+	 }
+	}	
+}
+
+
+class Main {
+	Depot depot0;
+	Depot depot1;
+	Customer customer0;
+	Customer customer1;
+	
+	Drone drone0;
+	Drone drone1;
+	
+	Main() {
+		depot0.location = depot0;
+		depot0.supplies_sugar = yes;
+		depot0.supplies_cream = no;
+		
+		depot1.location = depot1;
+		depot1.supplies_sugar = no;
+		depot1.supplies_cream = yes;
+		
+		customer0.location = customer0;
+		customer0.wants_sugar = yes;
+		customer0.wants_cream = yes;
+		
+		customer1.location = customer1;
+		customer1.wants_sugar = yes;
+		customer1.wants_cream = yes;
+		
+		drone0.location = depot0;
+		
+		drone1.location = depot1;
+	}
+	
+	method run() {
+		{
+			drone0.fly_depot0();
+			drone0.blah(drone1.location);
+			((customer0.wants_sugar == no) && (customer0.wants_cream == no) && 
+			 (customer1.wants_sugar == no) && (customer1.wants_cream == no));
+		}
+	}
+}

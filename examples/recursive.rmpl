@@ -1,0 +1,33 @@
+class Result {
+	value success;
+	value fail;
+}
+
+class Robot {
+	Result result;
+	
+	primitive method do_action() [1, 2];
+	primitive method give_up() [1, 2];
+	
+	method try_try_again() {
+		{
+			do_action();
+			if (result == fail) {
+				{
+					choose {
+						with choice: try_try_again();
+						with choice: give_up();
+					}
+				}
+			}
+		}
+	}
+}
+
+class Main() {
+	Robot r;
+	
+	method run() {
+		[0, 10] r.try_try_again();
+	}
+}
